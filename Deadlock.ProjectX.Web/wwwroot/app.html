@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ProjectX</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" /> 
+    <meta charset="utf-8" />
+    <!-- inject:css -->    
+    <link rel="stylesheet" href="/wwwroot/resources/css/all.css">    
+    <!-- endinject -->
+
+    <!-- inject:libs:js -->   
+    <script src="/wwwroot/resources/libs/all.js"></script>      
+    <!-- endinject -->
+</head>
+<body data-appversion="1.0.0.0">
+    <div id="content"></div>
+    <!-- inject:controls:html -->
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <!-- endinject -->
+    <script>
+        System.defaultJSExtensions = true;
+        System.config({
+            baseURL: '/wwwroot/resources/js',          
+            map: {
+                "app": "all",
+            }
+        });
+
+        System.import('app').then(function (m) {
+            console.log(m);
+            var element = document.getElementById("content");
+            var t = new m.App(element);
+        });
+    </script>
+</body>
+</html>
